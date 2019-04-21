@@ -22,7 +22,7 @@ public class UserInfoController {
         String userId = "1";
         UserInfo userInfo = userInfoService.queryUserInfo(userId);
         System.out.println("得到的数据："+userInfo.toString());
-        return "hello";
+        return "query";
     }
 
 
