@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yidiandian.dao.UserInfoDao">
+
+    <insert id="save" parameterType="com.yidiandian.entity.UserInfo">
+  	insert into user_info (user_id,user_name,address)
+    values (#{userId},#{userName},#{address})
+  </insert>
+
+
+    <select id="findByUserId" resultType="com.yidiandian.entity.UserInfo" parameterType="java.lang.String">
+        select user_id as userId, user_name as userName from user_info where user_id = #{userId}
+
+    </select>
+
+
+</mapper>

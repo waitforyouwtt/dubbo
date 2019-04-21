@@ -1,0 +1,27 @@
+spring:
+      datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+        username: root
+        password: root
+      jpa:
+        hibernate:
+          ddl-auto: update
+        show-sql: true
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  type-aliases-package: com.yidiandian.entity
+server:
+  port: 8081
+
+dubbo:
+  application:
+    name: dubbo-provider        #服务名称
+  registry:
+    protocol: zookeeper     #注册中心的协议
+    address: 127.0.0.1:2181 #注册中心的地址
+  protocol:
+    name: dubbo             #通信协议
+    port: 20880             #通信端口
+  monitor:
+    protocol: registry      #连接监控中心
